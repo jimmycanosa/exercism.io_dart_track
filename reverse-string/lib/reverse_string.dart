@@ -1,3 +1,3 @@
 String reverse(String input) {
-  return input.split('').reversed.join();
+  return String.fromCharCodes(input.codeUnits.reversed);
 }
