@@ -1,5 +1,5 @@
 class ResistorColorDuo {
-  List<String> colorcode = [
+  final colors = [
     'black',
     'brown',
     'red',
@@ -9,13 +9,15 @@ class ResistorColorDuo {
     'blue',
     'violet',
     'grey',
-    'white'
+    'white',
   ];
 
-  int value(List<String> colors) {
-    int color1 = colorcode.indexOf(colors[0]);
-    int color2 = colorcode.indexOf(colors[1]);
-
-    return (color1 * 10) + color2;
+  int value(List<String> queryColors) {
+    return int.parse(
+      queryColors
+          .take(2)
+          .map((color) => colors.indexOf(color).toString())
+          .join(),
+    );
   }
 }
